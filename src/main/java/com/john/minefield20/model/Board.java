@@ -1,18 +1,31 @@
 package com.john.minefield20.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Board {
     private int rows;
     private int columns;
     private int mines;
-    List<Field> fieldList = new ArrayList<>();
 
+    List<Field> fieldList = new ArrayList<>();
     public Board(int rows, int columns, int mines){
         setRows(rows);
         setColumns(columns);
         setMines(mines);
+
+        generateFields();
+    }
+
+
+    public void generateFields(){
+        for (int row = 0; row < getRows(); row++){
+            for (int column = 0; column < getColumns(); column++){
+                fieldList.add(new Field(row, column));
+            }
+        }
     }
 
     public int getRows() {

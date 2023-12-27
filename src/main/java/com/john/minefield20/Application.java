@@ -6,10 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		Board board = new Board(6, 6, 0);
+		Board board = new Board(2, 2, 0);
 		System.out.println(board);
 	}
 
